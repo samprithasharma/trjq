@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>the jquerry example</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" language="javascript">
+        $(document).ready(function(){
+  $("#driver").click(function(event){
+      $.getJSON('result.json',function(jd){
+          $('#stage').html('<p>name:'+jd.name+'</p>');
+          $('#stage').append('<p>age:'+jd.age+'</p>');
+          $('#stage').append('<p>sex:'+jd.sex+'</p>');
+
+      });
+  });
+        });
+
+        </script>
+    </head>
+    <body>
+        <p>click on button to load result.json file-</p>
+        <div id="stage" style="background-color: lightsalmon;">
+        STAGE</div>
+        <input type="button" id="driver" value="Load Data"/>
+    </body>
+</html>

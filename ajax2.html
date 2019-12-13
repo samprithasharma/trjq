@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>example of jquery animation effect</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+  $("button").click(function(){
+      $("#box").load("content.html #s",function(respnseTxt,statusTxt,jqXHR)
+      {
+          if(statusTxt=="success"){
+              alert("new content loaded successfully");
+          }
+          if(ststusTxt=="error"){
+              alert("error:"+jqXHR.status+" "+jqXHR.statusTxt);
+          }
+      });
+  });
+    });
+    </script>
+    </head>
+    <body>
+        <div id="box">
+            <h2>Click button to load new content inside div</h2>
+        </div>
+        <button type="button">load content</button>
+
+    </body>
+    </html>
